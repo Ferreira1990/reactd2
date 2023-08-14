@@ -1,12 +1,8 @@
 
-
 const SocialButton = ({ icon }) => {
-    return
-    (
-        <>
+    return (
         <i className={icon}></i>
-        </>
-    )
+    );
 }
 
 export default SocialButton;
