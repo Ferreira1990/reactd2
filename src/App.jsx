@@ -1,12 +1,10 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from 'react';
+import Registro from './components/Registro';
+import "./App.css";
 
-  return (
-    <>
-
-    </>
-  )
-
+function App (){
+  const [alert, setAlert] = useState ({msg:"", color:""});
+  return <Registro alert={alert} setAlert={setAlert}/>
+}
 
 export default App
