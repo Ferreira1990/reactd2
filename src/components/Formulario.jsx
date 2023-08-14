@@ -64,7 +64,7 @@ return (
                 type="confirmPassword,"
                 name="confirmPassword,"
                 placeholder="Confirma tu Contraseña"
-                value={confirmPassword,}
+                value={confirmPassword}
                 onchange={(e) => setConfirmPassword (e.target.value)}
                 />
                 <div>
