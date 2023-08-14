@@ -47,7 +47,7 @@ return (
             <input
                 type="text"
                 name="nombre"
-                placeholder="Nombre"
+                placeholder="Nombre de Usuario"
                 value={nombre}
                 onChange={(e) => setNombre (e.target.value)}
                 />
@@ -73,7 +73,7 @@ return (
                 onChange={(e) => setConfirmPassword (e.target.value)}
                 />
                 <div>
-                    <button className="custombuttoncf" type="submit">Registrarse</button>
+                    <button className="custombuttoncf" type="submit"> - Registrarse - </button>
                 </div>
         </form>
 
