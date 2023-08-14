@@ -1,6 +1,6 @@
 import { useState} from "react";
 
-const Formulario =({alerta}) => {
+const Formulario =({setAlert}) => {
     const [nombre, setNombre] = useState ("");
     const [email, setEmail] = useState ("");
     const [password, setPassword] = useState ("");
@@ -61,8 +61,8 @@ return (
                 onchange={(e) => setPassword (e.target.value)}
                 />    
             <input
-                type="confirmPassword,"
-                name="confirmPassword,"
+                type="confirmPassword"
+                name="confirmPassword"
                 placeholder="Confirma tu Contraseña"
                 value={confirmPassword}
                 onchange={(e) => setConfirmPassword (e.target.value)}
