@@ -1,4 +1,4 @@
-import {useState} from "react";
+import React, {useState} from "react";
 
 const Formulario =({setAlert}) => {
     const [nombre, setNombre] = useState ("");
@@ -8,7 +8,7 @@ const Formulario =({setAlert}) => {
 
 const validarDatos =(e) => {
         e.preventDefault();
-        if (password != confirmPassword){
+        if (password !== confirmPassword){
             setAlert({
                 msg: "Las contraseñas no coinciden !)",
                 color: "danger",
@@ -29,7 +29,10 @@ const validarDatos =(e) => {
             return;
         }
 
-        alert("Cuenta creada exitosamente !")
+        setAlert({
+         msg:"Cuenta creada exitosamente !",
+         color : "success",
+        });
         setNombre("");
         setEmail("");
         setPassword("");
@@ -38,39 +41,43 @@ const validarDatos =(e) => {
 
 return (
     <>
-        <form onsubmit={validarDatos}>
+
+    <div>
+        <form className="customform" onSubmit={validarDatos}>
             <input
                 type="text"
                 name="nombre"
                 placeholder="Nombre"
                 value={nombre}
-                onchange={(e) => setNombre (e.target.value)}
+                onChange={(e) => setNombre (e.target.value)}
                 />
             <input
                 type="email"
                 name="email"
                 placeholder="tuemail@ejemplo.com"
                 value={email}
-                onchange={(e) => setEmail (e.target.value)}
+                onChange={(e) => setEmail (e.target.value)}
                 />
             <input
                 type="password"
                 name="password"
                 placeholder="Contraseña"
                 value={password}
-                onchange={(e) => setPassword (e.target.value)}
+                onChange={(e) => setPassword (e.target.value)}
                 />    
             <input
-                type="confirmPassword"
+                type="password"
                 name="confirmPassword"
                 placeholder="Confirma tu Contraseña"
                 value={confirmPassword}
-                onchange={(e) => setConfirmPassword (e.target.value)}
+                onChange={(e) => setConfirmPassword (e.target.value)}
                 />
                 <div>
-                    <button type="submit">Registrarse</button>
+                    <button className="custombuttoncf" type="submit">Registrarse</button>
                 </div>
-        </form>   
+        </form>
+
+        </div>   
     </>
 );   
 };

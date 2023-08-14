@@ -1,21 +1,31 @@
-import SocialButtom from "./SocialButton";
+import SocialButton from "./SocialButton";
 import { useState } from 'react';
 import Formulario from "./Formulario";
 import Alert from "./Alert";
 
+
 const Registro = ({ alert, setAlert })=>{
-   
+
     return (
    <>
-    <h1>Crea una Cuenta</h1>
-    <SocialButtom icon="fa-brands fa-facebook"/>
-    <SocialButtom icon="fa-brands fa-github"/>
-    <SocialButtom icon="fa-brands fa-linkedin-in"/>
+   <div className="padre">
+   <div className="titlebox">
+    <h1 className="titletext">Crea una Cuenta</h1>
+
+    <div className="customicon">
+    <SocialButton icon="fa-brands fa-facebook"/>
+    <SocialButton icon="fa-brands fa-github"/>
+    <SocialButton icon="fa-brands fa-linkedin-in"/>
+    </div>
     <Formulario setAlert={setAlert}/>
+
+
+
     {alert.msg && <Alert msg={alert.msg} color={alert.color}/>}
+    </div>
+    </div>
  </>
- );
- 
+ ); 
 };
 
 export default Registro;
