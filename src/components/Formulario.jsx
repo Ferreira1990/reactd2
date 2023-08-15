@@ -5,6 +5,7 @@ const Formulario =({setAlert}) => {
     const [email, setEmail] = useState ("");
     const [password, setPassword] = useState ("");
     const [confirmPassword, setConfirmPassword] = useState ("");
+    const [captchaChecked, setCaptchaChecked] = useState(false); 
 
 const validarDatos =(e) => {
         e.preventDefault();
@@ -29,6 +30,14 @@ const validarDatos =(e) => {
             return;
         }
 
+        if (!captchaChecked) {
+            setAlert({
+              msg: "Por favor, haz clic en el CAPTCHA para demostrar que no eres un robot.",
+              color: "danger",
+            });
+            return;
+          }
+
         setAlert({
          msg:"Cuenta creada exitosamente !",
          color : "success",
@@ -37,6 +46,7 @@ const validarDatos =(e) => {
         setEmail("");
         setPassword("");
         setConfirmPassword("");
+        setCaptchaClicked(false); 
 };
 
 return (
@@ -72,6 +82,18 @@ return (
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword (e.target.value)}
                 />
+
+            <label className="checkbox-label">
+            <input
+              className="checkbox"
+              type="checkbox"
+              checked={captchaChecked}
+              onChange={() => setCaptchaChecked(!captchaChecked)}
+            /></label>
+            <p></p>
+            <p></p><p></p>
+            <p>Marca aquí para demostrar que no eres un robot</p>
+
                 <div>
                     <button className="custombuttoncf" type="submit"> - Registrarse - </button>
                 </div>

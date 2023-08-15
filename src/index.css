@@ -111,3 +111,25 @@ button:hover {
   background-color: rgb(255, 255, 255);
   transition: all 1s;
 }
+ /* */
+
+.checkbox-label {
+  display: inline-block;
+  position: relative;
+  padding-left: 35px; /* Aumenta este valor para aumentar el tamaño del checkbox */
+  cursor: pointer;
+}
+
+.checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px; /* Aumenta este valor para aumentar el tamaño del checkbox */
+  height: 25px; /* Aumenta este valor para aumentar el tamaño del checkbox */
+  border: 2px solid #333; /* Estilo del borde del checkbox */
+  background-color: #fff; /* Fondo del checkbox */
+}
+
+.checkbox-label input:checked + .checkbox {
+  background-color: #007bff; /* Cambia el fondo cuando el checkbox está marcado */
+}
